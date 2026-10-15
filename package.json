@@ -1,0 +1,8 @@
+{
+  "name": "it-budget-fy2027",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GT Events IT Budget FY 2027 presentation",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

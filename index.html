@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT Budget – FY 2027 | GT Events</title>
+  <link rel="icon" href="assets/gt-events-logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <main id="stage" class="stage">
+
+    <!-- 1. الغلاف -->
+    <section class="slide cover" data-title="الغلاف">
+      <div class="cover-glow" aria-hidden="true"></div>
+      <img class="cover-logo anim" src="assets/gt-events-logo.png" alt="GT Events">
+      <div class="cover-text">
+        <div class="eyebrow anim" style="--d:.15s">قسم تقنية المعلومات</div>
+        <h1 class="cover-title anim ltr" style="--d:.3s">IT Budget <span class="dash">–</span> FY 2027</h1>
+        <p class="cover-sub anim" style="--d:.45s">ميزانية قسم تقنية المعلومات للسنة المالية 2027</p>
+        <div class="cover-meta anim" style="--d:.6s">
+          <span>مقدَّمة إلى الإدارة المالية والإدارة التنفيذية</span>
+          <span class="sep"></span>
+          <span class="ltr">GT Events</span>
+        </div>
+      </div>
+      <div class="cover-hint anim" style="--d:1s">استخدم الأسهم ← → للتنقل</div>
+    </section>
+
+    <!-- 2. الملخص -->
+    <section class="slide" data-title="ملخص الميزانية">
+      <header class="slide-head">
+        <div class="kicker">01</div>
+        <h2>ملخص الميزانية</h2>
+      </header>
+      <div class="summary">
+        <div class="hero-card anim">
+          <div class="label">إجمالي الميزانية المطلوبة للسنة المالية 2027</div>
+          <div class="hero-number"><span class="num" id="kpiTotal">0</span><span class="cur"><span class="sar" role="img" aria-label="ريال سعودي"></span></span></div>
+          <div class="hero-foot">
+            <div class="paytitle">توزيع الإجمالي حسب الأولوية</div>
+            <div class="paybar" id="payBar"></div>
+            <div class="paylegend" id="payLegend"></div>
+          </div>
+        </div>
+        <div class="kpis" id="kpis"></div>
+      </div>
+    </section>
+
+    <!-- 3. التوزيع حسب التصنيف -->
+    <section class="slide" data-title="التوزيع حسب الأولوية">
+      <header class="slide-head">
+        <div class="kicker">02</div>
+        <h2>توزيع الميزانية حسب الأولوية</h2>
+        <div class="head-note" id="groupingNote"></div>
+      </header>
+      <div class="dist">
+        <div class="donut-wrap anim">
+          <svg id="donut" viewBox="0 0 400 400" aria-label="نسبة كل تصنيف من الإجمالي"></svg>
+          <div class="donut-center" id="donutCenter"></div>
+        </div>
+        <div class="cat-list" id="catList"></div>
+      </div>
+    </section>
+
+    <!-- 4. البنود وتكلفتها -->
+    <section class="slide" data-title="بنود الميزانية">
+      <header class="slide-head">
+        <div class="kicker">03</div>
+        <h2>بنود الميزانية وتكلفة كل بند</h2>
+        <div class="chips" id="itemChips"></div>
+      </header>
+      <div class="items-chart" id="itemsChart"></div>
+    </section>
+
+    <!-- 5. التوزيع الشهري -->
+    <section class="slide" data-title="التوزيع الشهري">
+      <header class="slide-head">
+        <div class="kicker">04</div>
+        <h2>التوزيع الشهري للمصروفات</h2>
+        <div class="head-note">حسب أشهر الاستحقاق الواردة في الملف</div>
+      </header>
+      <div class="monthly">
+        <div class="month-chart" id="monthChart"></div>
+        <aside class="month-side" id="monthSide"></aside>
+      </div>
+      <div class="month-legend" id="monthLegend"></div>
+    </section>
+
+    <!-- 6. الجدول التفصيلي -->
+    <section class="slide" data-title="الجدول التفصيلي">
+      <header class="slide-head">
+        <div class="kicker">05</div>
+        <h2>الجدول التفصيلي لجميع البنود</h2>
+        <div class="seg" id="tableSort">
+          <button class="on" data-sort="file">ترتيب الملف</button>
+          <button data-sort="amount">حسب المبلغ</button>
+        </div>
+      </header>
+      <div class="table-wrap">
+        <table class="detail" id="detailTable"></table>
+      </div>
+      <div class="table-hint">اضغط على أي بند لعرض توزيعه الشهري والنص الأصلي في الملف</div>
+    </section>
+
+    <!-- 7. الختام -->
+    <section class="slide closing" data-title="الخلاصة">
+      <img class="closing-logo anim" src="assets/gt-events-logo.png" alt="GT Events">
+      <div class="closing-label anim" style="--d:.1s">إجمالي ميزانية قسم تقنية المعلومات – FY 2027</div>
+      <div class="closing-total anim" style="--d:.2s"><span class="num" id="closeTotal">0</span><span class="cur"><span class="sar" role="img" aria-label="ريال سعودي"></span></span></div>
+      <div class="closing-cats anim" style="--d:.4s" id="closeCats"></div>
+      <div class="closing-thanks anim" style="--d:.6s">شكرًا لكم</div>
+    </section>
+
+    <!-- إطار ثابت -->
+    <div class="chrome-top">
+      <img src="assets/gt-events-logo.png" alt="" class="mini-logo">
+      <span class="ltr brand">IT Budget – FY 2027</span>
+    </div>
+    <div class="chrome-bottom">
+      <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="foot-row">
+        <span class="foot-src">المصدر: ملف ميزانية القسم (Excel) · المبالغ بالريال السعودي</span>
+        <div class="dots" id="dots"></div>
+        <div class="nav">
+          <button id="prevBtn" aria-label="السابق">&#8594;</button>
+          <span class="counter" id="counter"></span>
+          <button id="nextBtn" aria-label="التالي">&#8592;</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tooltip" id="tooltip" role="tooltip"></div>
+  </main>
+
+  <div class="data-alert" id="dataAlert" hidden></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
